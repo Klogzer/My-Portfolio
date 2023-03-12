@@ -1,0 +1,42 @@
+.cta-buttons {
+  position: fixed;
+  right: 0;
+  bottom: 50%;
+  z-index: 2;
+  transform: translate(0, 50%);
+
+  .cta-button {
+    @extend .my-2;
+    align-items: center;
+    justify-content: center;
+    @extend .btn;
+    @extend .btn-main;
+    @extend .d-block;
+
+    svg {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    bottom: 0;
+    display: flex;
+    left: 50%;
+    right: unset;
+    transform: translate(-50%, 0%);
+
+    .cta-button {
+      display: block !important;
+      // margin left and right 1.25rem top and bottom 0rem
+      margin: 0 0.25rem !important;
+      svg {
+        display: block;
+        height: auto;
+        width: 40px;
+      }
+    }
+
+
+  }
+}

@@ -1,0 +1,159 @@
+
+.navbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    @extend .position-fixed;
+    @extend .inner-shadow;
+    @extend .navbar;
+    @extend .bg-main;
+    height: $height-medium;
+}
+
+.card {
+    @extend .shadow;
+    @extend .p-0;
+}
+
+.card-body {
+    @extend .p-4;
+}
+
+.menu-bars {
+    @extend .btn;
+    height: $height-small;
+    width: $width-small;
+
+    @media screen and (max-width: 540px) {
+        margin-left: 50%;
+    }
+
+    margin-left: calc($width-medium /2);
+    border-radius: 0px !important;
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+    z-index: 0;
+    transform: translate(-50%);
+
+    svg {
+        @extend .h-100;
+        @extend .w-100;
+    }
+
+    @extend .btn-main;
+}
+
+
+.nav-menu {
+    @extend .shadow;
+    background-color: $light;
+
+    @media screen and (max-width: $mobile-break-point) {
+        width: 100%;
+    }
+
+    overflow: auto;
+    width: $width-medium;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    transition: all 0.25s linear;
+    opacity: 0;
+    z-index: 0;
+
+    &.active {
+        left: 0;
+        opacity: 1;
+        z-index: 2;
+    }
+
+    .navbar-toggle {
+        height: $height-medium;
+        background-color: $dark !important;
+        @extend .navbar;
+        @extend .btn-dark;
+
+        .menu-bars {
+            @extend .btn-dark;
+            z-index: 2;
+        }
+    }
+
+    .nav-menu-items {
+        width: 100%;
+        @extend .p-0;
+
+        .user-card {
+            @extend .d-flex;
+            @extend .align-items-center;
+            @extend .justify-content-center;
+            @extend .flex-column;
+            @extend .py-5;
+            @extend .px-4;
+            @extend .my-5;
+            @extend .bg-dark;
+
+            .text {
+                @extend .mb-0;
+
+                @extend .h1;
+                @extend .text-center;
+                @extend .text-light;
+            }
+
+
+            .img-wrapper {
+                @extend .position-relative;
+                @extend .w-100;
+                @extend .mb-3;
+                position: relative;
+
+                img {
+                    @extend .w-100;
+                    @extend .inner-shadow;
+                    @extend .img-fluid;
+                    clip-path: polygon(0 20%, 20% 0, 80% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0 80%);
+                }
+            }
+        }
+
+        .nav-text {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            height: 80px;
+            @extend .px-4;
+            @extend .my-4;
+
+            &.active {
+                a {
+                    @extend .btn-dark;
+                    @extend .ps-5;
+                }
+            }
+
+            a {
+                @extend .fw-bold;
+                @extend .btn-outline-secondary;
+                @extend .btn-lg;
+                @extend .btn;
+                @extend .h-100;
+                @extend .w-100;
+                @extend .d-flex;
+                @extend .align-items-center;
+                @extend .px-3;
+                text-decoration: none;
+                border-radius: 0;
+
+
+
+                svg {
+                    @extend .me-3;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,99 @@
+
+
+$height-small: 80px;
+$height-medium: 100px;
+$width-small: 80px;
+$width-medium: 350px;
+$mobile-break-point: 540px;
+
+$main : #2F747C;
+$primary:    #2F747C;
+$secondary:  #455D62;
+$success:    #5fb980;
+$info:       #549dc8;
+$warning:    #dca948;
+$danger:     #f44336;
+$light:      #FAFBFA;
+$dark:       #252431;
+$accent:    #31A8B3;
+$dark-accent: #2F747C;
+$white:      #fff;
+$black:      #000;
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "~bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
+
+@import "my-variables.scss";
+
+
+@import "~bootstrap/scss/maps";
+
+
+@import "../../node_modules/bootstrap/scss/mixins";
+
+
+// 4. Include any optional Bootstrap components as you like
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/dropdown";
+@import "../../node_modules/bootstrap/scss/button-group";
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/card";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/utilities/api";
+@import "../../node_modules/react-vertical-timeline-component/style.min.css";
+@import "./custom-vertical-timeline.scss";
+@import "./cta-buttons.scss";
+@import "./navbar.scss";
+@import "./Projects.scss";	
+
+
+
+a {
+
+    text-decoration: none;
+
+    &:hover {
+        color: $dark;
+        text-decoration: underline;
+    }
+
+}
+
+body {
+    margin-top: 100px;
+    background-color: $light;
+}
+
+#root {
+    transition: padding-left 0.25s linear;
+
+    &.menu-active {
+        padding-left: $width-medium;
+    }
+
+    @media screen and (max-width: $mobile-break-point) {
+        &.menu-active {
+            padding-left: unset;
+        }
+    }
+
+}
+
+.inner-shadow {
+    -webkit-box-shadow: inset 0px -110px 32px -130px $dark;
+    -moz-box-shadow: inset 0px -110px 32px -130px $dark;
+    box-shadow: inset 0px -110px 32px -130px $dark;
+}
