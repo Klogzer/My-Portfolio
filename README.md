@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+#Portfolio Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a portfolio page built with Bootstrap and Bootstrap React in TypeScript. It showcases my projects, skills, and experiences.
 
 ## Available Scripts
 
