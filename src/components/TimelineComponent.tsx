@@ -10,11 +10,10 @@ import { Col, Row } from 'react-bootstrap';
 
 function TimelineComponent() {
     return (
-        <Row className='mt-'>
+        <Row className='mt-0 overflow-hidden'>
             <Col className='px-4'>
-                <VerticalTimeline className='pb-0 mx-0 mb-7'>
+                <VerticalTimeline className='pb-5'>
                     {timelineElements.map((element,index) => {
-                        let last = index === timelineElements.length - 1;
 
                         return (
                             <VerticalTimelineElement
@@ -22,7 +21,6 @@ function TimelineComponent() {
                                 date={element.date}
                                 dateClassName="date"
                                 icon={element.icon}
-                            	className={last ? "bg-light mb-0" : ""}
 
                                 >
                                 <h3  className="vertical-timeline-element-title">{element.title}</h3>

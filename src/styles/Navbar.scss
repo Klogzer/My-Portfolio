@@ -1,5 +1,5 @@
-
 .navbar {
+
     top: 0;
     left: 0;
     right: 0;
@@ -9,6 +9,32 @@
     @extend .navbar;
     @extend .bg-main;
     height: $height-medium;
+
+
+    .etc-menu {
+        @extend .p-0;
+        @extend .me-2;
+        @extend .mb-0;
+        list-style: none;
+        li {
+            list-style: none;
+            a {
+                @extend .btn;
+                @extend .btn-main;
+                @extend .d-flex;
+                @extend .align-items-center;
+                @extend .justify-content-center;
+                height: $height-small;
+                width: $width-small;
+                border-radius: 0px !important;
+
+                svg {
+                    @extend .h-100;
+                    @extend .w-100;
+                }
+            }
+        }
+    }
 }
 
 .card {
@@ -92,7 +118,7 @@
             @extend .justify-content-center;
             @extend .flex-column;
             @extend .py-5;
-            @extend .px-4;
+            @extend .px-5;
             @extend .my-5;
             @extend .bg-dark;
 
@@ -106,8 +132,8 @@
 
 
             .img-wrapper {
+                @extend .mx-auto;
                 @extend .position-relative;
-                @extend .w-100;
                 @extend .mb-3;
                 position: relative;
 
@@ -125,7 +151,7 @@
             align-items: center;
             list-style: none;
             height: 80px;
-            @extend .px-4;
+            @extend .px-5;
             @extend .my-4;
 
             &.active {

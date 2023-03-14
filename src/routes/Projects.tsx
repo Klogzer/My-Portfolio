@@ -5,21 +5,19 @@ import { Link } from 'react-router-dom';
 
 function Projects() {
   return (
-    <Container>
+    <Container className='pb-7'>
       <Row>
         <Col className='p-4'>
           <h1>Projects</h1>
         </Col>
       </Row>
       <Row xs={1} md={2} lg={3} className="g-4  card-group">
-        {ProjectData.slice(0, 3).map((project, index) => (
+        {ProjectData.slice(0, 4).map((project, index) => (
           <Col xs={12} sm={12} md={12} lg={6} xl={4} key={index} className='px-4'>
 
             <Card className='h-100 project-card'>
-              <Link tabIndex={-1} to={`/projects/${project.id}`}>
 
                 <Card.Img variant="top" src={project.image} alt={project.title} />
-              </Link>
 
               <Card.Body className='d-flex  flex-column'>
                 <Card.Title>{project.title}</Card.Title>

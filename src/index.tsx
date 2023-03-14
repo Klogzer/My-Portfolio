@@ -8,11 +8,9 @@ import {
   Link,
   Outlet,
 } from "react-router-dom";
-import * as FaIcons from 'react-icons/fa';
 import Projects from "./routes/Projects";
 import About from "./routes/About";
-import Contact from "./routes/Contact";
-import Home from "./routes/Home";
+import { Impressum, Imprint } from "./routes/Imprint";
 import Navbar from "./components/Navbar";
 import "./styles/main.scss";
 import CTAButtons from "./components/CTAButtons";
@@ -21,12 +19,12 @@ const AppLayout = () => {
   return (
     <>
       <NavbarContextProvider
-        initialNavbarState={{ 
+        initialNavbarState={{
           visible: true,
-          activeTab: 'About Me' 
+          activeTab: 'About Me'
         }}
       >
-        <CTAButtons/>
+        <CTAButtons />
         <Navbar />
         <Outlet />
       </NavbarContextProvider>
@@ -44,6 +42,14 @@ const router = createBrowserRouter([
       path: 'projects',
       element: <Projects />,
     },
+    {
+      path: 'imprint',
+      element: <div>
+        <Impressum />
+        <hr />
+        <Imprint />
+      </div>
+    }
     ]
   },
 
