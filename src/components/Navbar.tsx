@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
+import { useNavbarContext } from '../contexts/NavbarContext';
+import { SidebarItem } from '../Interfaces';
+import { sidebarData } from '../data';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import { SidebarData } from '../data/sidebarData';
 import userImg from '../assets/images/user.webp';
-import { useNavbarContext } from '../Contexts/NavbarContext';
-import { SidebarItem } from '../Interfaces';
+
+
 
 const Navbar = () => {
   const { navbarState, setNavbarState } = useNavbarContext();
@@ -49,7 +51,7 @@ const Navbar = () => {
                 <span>Mauritz</span>
               </div>
             </li>
-            {SidebarData.map(({ cName, title, icon, path }: SidebarItem, index) => (
+            {sidebarData.map(({ cName, title, icon, path }: SidebarItem, index) => (
               <li key={index} className={[cName, navbarState.activeTab === title ? ' active' : ''].join('')}>
                 <Link to={path} onClick={() => handleTabChange(title)}>
                   {icon}

@@ -145,11 +145,6 @@ export const TimelineElements: TimelineItem[] = [
     date: "October 7, 1992",
     icon: <FaIcons.FaBirthdayCake style={{ color: 'currentColor' }} />,
   },
+];
 
-
-
-
-
-
-
-]
+export default TimelineElements;

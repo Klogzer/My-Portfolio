@@ -23,3 +23,5 @@ export const CTAData: CTA[] = [
     icon: <FaIcons.FaRegEnvelope/>,
   },
 ];
+
+export default CTAData;

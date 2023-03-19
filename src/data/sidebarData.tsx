@@ -22,3 +22,5 @@ export const SidebarData: SidebarItem[] = [
     cName: 'nav-text',
   },
 ];
+
+export default SidebarData;

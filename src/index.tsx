@@ -1,13 +1,8 @@
-import React from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider,  Outlet } from "react-router-dom";
-import NavbarContextProvider from "./Contexts/NavbarContext";
-import Navbar from "./components/Navbar";
-import CTAButtons from "./components/CallToActionButton";
-import Articles from "./components/Articles";
-import About from "./routes/About";
-import Projects from "./routes/Projects";
-import { Impressum, Imprint } from "./routes/Imprint";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { NavbarContextProvider } from "./contexts";
+import { Navbar, CallToActionButtons, Articles } from "./components";
+import { About, Projects, Imprint } from "./routes";
 import "./styles/main.scss";
 
 const AppLayout = () => {
@@ -20,7 +15,7 @@ const AppLayout = () => {
           activeTab: 'About Me'
         }}
       >
-        <CTAButtons />
+        <CallToActionButtons />
         <Navbar />
         <Outlet />
       </NavbarContextProvider>
@@ -44,11 +39,7 @@ const router = createBrowserRouter([
     },
     {
       path: 'imprint',
-      element: <div>
-        <Impressum />
-        <hr />
-        <Imprint />
-      </div>
+      element: <Imprint />
     }
     ]
   },

@@ -1,5 +1,4 @@
-import React from 'react';
-import { ProjectData } from '../data/projectData';
+import { projectData } from '../data';
 import { Card, Button, Col, Row, Container } from 'react-bootstrap';
 
 const Projects = () => {
@@ -11,7 +10,7 @@ const Projects = () => {
         </Col>
       </Row>
       <Row xs={1} md={2} lg={3} className="g-4  card-group">
-        {ProjectData.slice(0, 4).map((project, index) => (
+        {projectData.slice(0, 4).map((project, index) => (
           <Col xs={12} sm={12} md={12} lg={6} xl={4} key={index} className='px-4'>
 
             <Card className='h-100 project-card'>

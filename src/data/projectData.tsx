@@ -139,3 +139,5 @@ export const ProjectData = [
     link: "https://github.com/Klogzer/SWT2-Calender",
   },
 ];
+
+export default ProjectData;
