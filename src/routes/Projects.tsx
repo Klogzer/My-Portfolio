@@ -2,7 +2,7 @@ import React from 'react';
 import { ProjectData } from '../data/ProjectData';
 import { Card, Button, Col, Row, Container } from 'react-bootstrap';
 
-function Projects() {
+const Projects = () => {
   return (
     <Container className='pb-7'>
       <Row>

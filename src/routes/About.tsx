@@ -1,6 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import TimelineComponent from '../components/TimelineComponent';
-function About() {
+const About = () => {
   return (
     <Container>
       <Row>
