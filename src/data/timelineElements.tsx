@@ -1,7 +1,8 @@
 import * as FaIcons from 'react-icons/fa';
 import * as IoIcons from 'react-icons/io';
+import { TimelineItem } from '../Interfaces';
 
-let timelineElements = [
+let TimelineElements: TimelineItem[] = [
   {
     id: 10,
     title: "Full Stack Developer",
@@ -133,6 +134,7 @@ let timelineElements = [
     location: "Lübeck, Germany",
     description: "Graduated from Waldorf School Lübeck in 2011 with a Realschulabschluss.",
     buttonText: "Waldorf School Lübeck",
+    date: "2011",
     icon: <FaIcons.FaGraduationCap style={{ color: 'currentColor' }} />,
   },
   {
@@ -141,6 +143,7 @@ let timelineElements = [
     location: "Lübeck, Germany",
     description: "Born on October 7, 1992 in Lübeck.",
     buttonText: null,
+    date: "October 7, 1992",
     icon: <FaIcons.FaBirthdayCake style={{ color: 'currentColor' }} />,
   },
 
@@ -153,4 +156,4 @@ let timelineElements = [
 ]
 // FaSnowboarding
 // FaBaby
-export default timelineElements
+export default TimelineElements

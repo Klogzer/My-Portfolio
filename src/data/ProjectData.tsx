@@ -1,5 +1,27 @@
 import * as FaIcons from 'react-icons/fa';
 import * as SiIcons from 'react-icons/si';
+
+interface Technology {
+  name: string;
+  icon: JSX.Element;
+}
+
+
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  technologies: Technology[];
+  link_target?: string;
+  link_text?: string;
+  link?: string;
+  link_target2?: string;
+  link_text2?: string;
+  link2?: string;
+}
+
+
 export const ProjectData = [
   {
     id: 1,

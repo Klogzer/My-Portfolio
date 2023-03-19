@@ -1,21 +1,26 @@
-import React from "react";
 import Button from "react-bootstrap/Button";
-import { CTAData } from '../data/CTAData';
+import { CTAData } from '../data/CTAButtonData';
+import { CTA } from '../Interfaces';
 
 function CTAButtons() {
-    return (
-        <div className="cta-buttons">
-            {CTAData.map((item, index) => {
-                return (
-                    <Button href={item.url} style={{backgroundColor:item.color}} className="cta-button border-0" target={"_blank"}>
-                        {item.icon}
-                        <span className="small">{item.name}</span>
-                    </Button>
-                );
-            })}
+  return (
+    <div className="cta-buttons">
+      {CTAData.map(({ url, color, icon, name }: CTA, index: number) => (
+        <Button
+          key={index}
+          href={url}
+          style={{ backgroundColor: color }}
+          className="cta-button border-0"
+          target="_blank"
+        >
+          {icon}
+          <span className="small">{name}</span>
+        </Button>
+      ))}
+    </div>
+  );
+}
 
-        </div>
-    );
-};
+
 
 export default CTAButtons;
