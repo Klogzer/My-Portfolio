@@ -2,7 +2,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as IoIcons from 'react-icons/io';
 import { TimelineItem } from '../Interfaces';
 
-let TimelineElements: TimelineItem[] = [
+export const TimelineElements: TimelineItem[] = [
   {
     id: 10,
     title: "Full Stack Developer",
@@ -154,6 +154,3 @@ let TimelineElements: TimelineItem[] = [
 
 
 ]
-// FaSnowboarding
-// FaBaby
-export default TimelineElements
