@@ -1,7 +1,6 @@
 import React from 'react';
 import { ProjectData } from '../data/ProjectData';
 import { Card, Button, Col, Row, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 
 function Projects() {
   return (

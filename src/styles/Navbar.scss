@@ -1,3 +1,28 @@
+.menu-bars {
+    @extend .btn;
+    height: $height-small;
+    width: $width-small;
+
+    @media screen and (max-width: 540px) {
+        margin-left: 50%;
+    }
+
+    margin-left: calc($width-medium / 2);
+    border-radius: 0px !important;
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+    z-index: 0;
+    transform: translate(-50%);
+
+    svg {
+        @extend .h-100;
+        @extend .w-100;
+    }
+
+    @extend .btn-main;
+}
+
 .navbar {
 
     top: 0;
@@ -16,8 +41,10 @@
         @extend .me-2;
         @extend .mb-0;
         list-style: none;
+
         li {
             list-style: none;
+
             a {
                 @extend .btn;
                 @extend .btn-main;
@@ -37,39 +64,7 @@
     }
 }
 
-.card {
-    @extend .shadow;
-    @extend .p-0;
-}
 
-.card-body {
-    @extend .p-4;
-}
-
-.menu-bars {
-    @extend .btn;
-    height: $height-small;
-    width: $width-small;
-
-    @media screen and (max-width: 540px) {
-        margin-left: 50%;
-    }
-
-    margin-left: calc($width-medium /2);
-    border-radius: 0px !important;
-    @extend .d-flex;
-    @extend .align-items-center;
-    @extend .justify-content-center;
-    z-index: 0;
-    transform: translate(-50%);
-
-    svg {
-        @extend .h-100;
-        @extend .w-100;
-    }
-
-    @extend .btn-main;
-}
 
 
 .nav-menu {
@@ -154,13 +149,6 @@
             @extend .px-5;
             @extend .my-4;
 
-            &.active {
-                a {
-                    @extend .btn-dark;
-                    @extend .ps-5;
-                }
-            }
-
             a {
                 @extend .fw-bold;
                 @extend .btn-outline-secondary;
@@ -180,6 +168,15 @@
                     @extend .me-3;
                 }
             }
+
+            &.active {
+                a {
+                    @extend .btn-dark;
+                    @extend .ps-5;
+                }
+            }
+
+
         }
     }
 }
