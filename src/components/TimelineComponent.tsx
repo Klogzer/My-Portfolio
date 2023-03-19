@@ -1,4 +1,4 @@
-import { TimelineElements } from '../data/TimelineElements';
+import { TimelineElements } from '../data/timelineData';
 import { Technology, TimelineItem } from '../Interfaces';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { Col, Row } from 'react-bootstrap';

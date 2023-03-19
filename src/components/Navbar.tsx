@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import { SidebarData } from '../data/SidebarData';
+import { SidebarData } from '../data/sidebarData';
 import userImg from '../assets/images/user.webp';
 import { useNavbarContext } from '../Contexts/NavbarContext';
 import { SidebarItem } from '../Interfaces';

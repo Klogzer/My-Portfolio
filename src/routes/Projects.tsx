@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProjectData } from '../data/ProjectData';
+import { ProjectData } from '../data/projectData';
 import { Card, Button, Col, Row, Container } from 'react-bootstrap';
 
 const Projects = () => {

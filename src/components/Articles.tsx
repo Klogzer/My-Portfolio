@@ -1,6 +1,6 @@
 import ArticleTeaser from "./ArticleTeaser";
 import { Article } from "../Interfaces";
-import articles from "../data/ArticleData";
+import articles from "../data/articleData";
 
 const Articles = () => {
   return (
