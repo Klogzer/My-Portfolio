@@ -1,5 +1,5 @@
 import Button from "react-bootstrap/Button";
-import { CTAData } from '../data/ctaButtonData';
+import { CTAData } from '../data/callToActionData';
 import { CTA } from '../Interfaces';
 
 function CTAButtons() {

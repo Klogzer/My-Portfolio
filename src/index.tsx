@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider,  Outlet } from "react-router-dom";
 import NavbarContextProvider from "./Contexts/NavbarContext";
 import Navbar from "./components/Navbar";
-import CTAButtons from "./components/CTAButtons";
+import CTAButtons from "./components/CallToActionButton";
 import Articles from "./components/Articles";
 import About from "./routes/About";
 import Projects from "./routes/Projects";
