@@ -1,6 +1,7 @@
 FROM node:22-alpine AS build
 WORKDIR /app
-COPY src/main.ts tsconfig.json package.json ./
+COPY src/main.ts ./src/
+COPY tsconfig.json package.json ./
 RUN npm install --save-dev typescript && npx tsc
 
 FROM nginx:alpine
