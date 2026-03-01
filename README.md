@@ -1,46 +1,64 @@
-# Portfolio Page
+# Portfolio — Marius Kaufmann
 
-This project is a portfolio page built with Bootstrap and Bootstrap React in TypeScript. It showcases my projects, skills, and experiences.
+Personal portfolio and CV site. Pure HTML + CSS + minimal TypeScript, served with nginx in Docker.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+- [Node.js](https://nodejs.org/) (for TypeScript compilation)
+- [Docker](https://www.docker.com/)
+- Google Chrome (for CV PDF generation)
 
-### `npm start`
+## Build the CV
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The CVs live in `cv.html` (English) and `de/cv.html` (German) and get printed to PDF via headless Chrome:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```sh
+google-chrome --headless --disable-gpu --no-sandbox \
+  --print-to-pdf="marius_kaufmann_en.pdf" --no-pdf-header-footer cv.html
 
-### `npm test`
+google-chrome --headless --disable-gpu --no-sandbox \
+  --print-to-pdf="marius_kaufmann_de.pdf" --no-pdf-header-footer de/cv.html
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Edit the HTML files directly — all content is inline. After changes, re-run the commands above to regenerate the PDFs.
 
-### `npm run build`
+## Build & Deploy
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Compile TypeScript
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+npx tsc
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This compiles `main.ts` → `dist/main.js`.
 
-### `npm run eject`
+### Run locally with Docker
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+docker build -t portfolio .
+docker run -p 8080:80 portfolio
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The site is served at [http://localhost:8080](http://localhost:8080).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### What gets deployed
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The Dockerfile is a multi-stage build:
 
-## Learn More
+1. **Build stage** (`node:22-alpine`): installs TypeScript and compiles `main.ts`
+2. **Serve stage** (`nginx:alpine`): copies all static files and serves them with gzip, caching, and security headers (configured in `nginx.conf`)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+index.html      — English site (single page, all content inline)
+de/index.html   — German site
+cv.html                — English CV source (HTML, optimized for print)
+de/cv.html             — German CV source
+marius_kaufmann_en.pdf — Generated English CV PDF
+marius_kaufmann_de.pdf — Generated German CV PDF
+style.css       — Terminal-aesthetic stylesheet
+main.ts         — Mobile nav toggle (~15 lines)
+nginx.conf      — gzip, cache headers, security headers
+Dockerfile      — Multi-stage build
+```
